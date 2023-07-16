@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import NotFound from './notFound';
 import Contact from './contact';
+import create  contact =
 import {
   Root,
   rootAction,

@@ -1,7 +1,8 @@
 import { Form, Outlet, useLoaderData, redirect, Link } from 'react-router-dom';
 import { createContact, getContact, getContacts } from './contacts';
 
-export function Root() {
+export async function Root() {
+console.log(useLoaderData());
   const contacts = useLoaderData();
 
   return (
@@ -21,20 +22,20 @@ export function Root() {
             <div className="sr-only" aria-live="polite"></div>
           </form>
 
-          <Form method="post">
+
+          <form method="post">
             <button type="submit">New</button>
-          </Form>
+          </form>
         </div>
         <nav>
           <ul>
-            {contacts.map((contact) => {
-              return (
-                <li>
-                  <Link to={'/contact/' + contact.id}> {contact.id}</Link>
-                </li>
-              );
-            })}
-          </ul>
+            {contacts.map((contact) =>{
+              <li>
+              <a> {contact.id} </a>
+            </li>
+          })}
+            
+             </ul>
         </nav>
       </div>
       <div id="detail">

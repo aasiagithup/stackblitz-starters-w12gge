@@ -1,9 +1,10 @@
-import { Form, useLoaderData } from 'react-router-dom';
+import { Form, useLoaderData ,createcontact} from 'react-router-dom';
 
-export default function Contact() {
+export  function Contact() {
   const contact = useLoaderData();
-
-  return (
+export function createcontact(){
+  const createcontact = useLoaderData();
+  return ( 
     <div id="contact">
       {contact.id}
       <div>
@@ -67,4 +68,5 @@ function Favorite({ contact }) {
       </button>
     </Form>
   );
+}
 }
